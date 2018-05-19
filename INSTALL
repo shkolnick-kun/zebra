@@ -1,0 +1,5 @@
+To install, use pip:
+  $ pip install zebra
+
+If an alpha version is required:
+  $ pip install --pre zebra

@@ -1,0 +1,60 @@
+Metadata-Version: 1.1
+Name: zebra
+Version: 0.0.5
+Summary: A package to communicate with (Zebra) label printers using EPL2
+Home-page: http://www.wyre-it.co.uk/zebra/
+Author: Ben Croston
+Author-email: ben@croston.org
+License: MIT
+Description: ============
+        Zebra-0.0.5
+        ============
+        
+        Usage:
+        
+        ::
+        
+            from zebra import zebra
+        
+            z = zebra( [queue] )
+              Constructor with optional printer queue
+        
+            z.getqueues()
+              Return a list containing available printer queues
+        
+            z.setqueue( queue )
+              Set the printer queue
+        
+            z.setup( direct_thermal=None, label_height=None, label_width=None )
+              Set up the label printer. Parameters are not set if they are None.
+                direct_thermal - True if using direct thermal labels
+                label_height   - tuple (label height, label gap) in dots
+                label_width    - in dots
+        
+            z.store_graphic( name, filename )
+              Store a .PCX file on the label printer
+                name     - name to be used on printer
+                filename - local filename
+        
+            z.output( commands )
+              Output EPL2 commands to the printer
+        
+        Note:
+        
+        - On Mac and *nix, install the printer as a Raw printer, not a Zebra one.
+        If you are on a Linux or MacOSX machine using CUPS, you may need to set up a
+        printer queue using the admin panel at http://localhost:631
+        
+        
+Platform: Windows
+Platform: Unix
+Platform: MacOSX
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: Unix
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Topic :: Printing

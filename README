@@ -1,0 +1,39 @@
+============
+Zebra-0.0.5
+============
+
+Usage:
+
+::
+
+    from zebra import zebra
+
+    z = zebra( [queue] )
+      Constructor with optional printer queue
+
+    z.getqueues()
+      Return a list containing available printer queues
+
+    z.setqueue( queue )
+      Set the printer queue
+
+    z.setup( direct_thermal=None, label_height=None, label_width=None )
+      Set up the label printer. Parameters are not set if they are None.
+        direct_thermal - True if using direct thermal labels
+        label_height   - tuple (label height, label gap) in dots
+        label_width    - in dots
+
+    z.store_graphic( name, filename )
+      Store a .PCX file on the label printer
+        name     - name to be used on printer
+        filename - local filename
+
+    z.output( commands )
+      Output EPL2 commands to the printer
+
+Note:
+
+- On Mac and *nix, install the printer as a Raw printer, not a Zebra one.
+If you are on a Linux or MacOSX machine using CUPS, you may need to set up a
+printer queue using the admin panel at http://localhost:631
+
