@@ -47,7 +47,7 @@ class zebra(object):
 
     def _output_win(self, commands):
         if self.queue == 'zebra_python_unittest':
-            print commands
+            print(commands)
             return
         hPrinter = win32print.OpenPrinter(self.queue)
         try:
@@ -137,7 +137,7 @@ class zebra(object):
 
 if __name__ == '__main__':
     z = zebra()
-    print 'Printer queues found:',z.getqueues()
+    print('Printer queues found:',z.getqueues())
     z.setqueue('zebra_python_unittest')
     z.setup(direct_thermal=True, label_height=(406,32), label_width=609)    # 3" x 2" direct thermal label
     z.store_graphic('logo','logo.pcx')
